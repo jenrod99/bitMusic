@@ -1,0 +1,17 @@
+/* Footer */
+footer{
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    font-family: 'Heebo';
+
+}
+a{
+    color: white !important;
+}
+.fab{
+    font-size: 15pt;
+    margin: .5em 0;
+}
+.fa-facebook{
+    margin: 0 .5em;
+}

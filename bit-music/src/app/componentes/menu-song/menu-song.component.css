@@ -1,0 +1,22 @@
+.player-box{
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    padding: 1em;
+    width: 90%;
+    margin: .5em 0;
+}
+p{
+    margin: 0;
+}
+.fa-play{
+    margin: 0 2em 0 2em;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .player-box{
+        width:100%;
+        font-size: 13px;
+        margin: .5em 0;
+    }
+}
