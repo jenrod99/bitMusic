@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainMenuComponent } from './main-menu.component';
+import { $ } from 'protractor';
 
 describe('MainMenuComponent', () => {
   let component: MainMenuComponent;

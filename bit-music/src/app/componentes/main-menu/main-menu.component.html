@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-light" (click)="asignarBoton('editarCanciones')"
-                *ngIf="usuario?.role =='ROLE-ADMIN'">Crear
+        <div class="btn-group offset-1" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary btn-tab visible" id="firstTab"
+                (click)="asignarBoton('editarCanciones')" *ngIf="usuario?.role =='ROLE-ADMIN'">Crear
                 Canciones</button>
-            <button type="button" class="btn btn-light" (click)="asignarBoton('perfil')">Mi Perfíl</button>
-            <button type="button" class="btn btn-light" (click)="asignarBoton('buscar')">Buscar
+            <button type="button" class="btn btn-primary btn-tab" (click)="asignarBoton('perfil')">Mi Perfíl</button>
+            <button type="button" class="btn btn-primary btn-tab" (click)="asignarBoton('buscar')">Buscar
                 Canciones</button>
         </div>
     </div>

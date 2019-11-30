@@ -24,4 +24,6 @@ export class MainMenuComponent implements OnInit {
   asignarBoton(boton) {
     this.boton = boton;
   }
+
+  
 }
