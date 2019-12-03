@@ -1,15 +1,16 @@
 <nav class="navbar">
   <div class="container">
-      <div class="row">
-          <div class="d-flex flex-wrap justify-content-around align-items-center">
-          <div class="col-12 col-md-4">
-              <a class="navbar-brand" href="#">Bit Music</a>
-          </div>
-          <div class="col-12 col-md-4 ml-auto">
-              <button class="btn btn-primary btn-lg" type="button">Iniciar sesión</button>
-          </div>
+    <div class="row total-width">
+      <div class="d-flex flex-wrap justify-content-around align-items-center total-width">
+        <div class="col-12 col-md-8">
+          <a class="navbar-brand" href="#">Bit Music</a>
         </div>
+        <div class="col-12 col-md-4 aling-right">
+          <button *ngIf="!_usuarioService.usuario || _usuarioService.usuario.nombre==''" class="btn btn-primary btn-lg" type="button" (click)="goLogin()">Iniciar sesión</button>
+          <button *ngIf="_usuarioService.usuario && _usuarioService.usuario.nombre!=''" class="btn btn-primary btn-lg" type="button" (click)="logOut()">Cerrar sesión</button>
         </div>
+      </div>
+    </div>
   </div>
 </nav>
 

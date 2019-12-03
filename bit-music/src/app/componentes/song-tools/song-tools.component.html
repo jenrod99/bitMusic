@@ -1,29 +1,33 @@
 <div class="card-cont">
     <div class="card card-bit">
         <div class="card-header">
-            <h3>Crear canción</h3>
+            <h2>Crear canción</h2>
         </div>
         <div class="card-body">
 
             <form>
                 <div class="form-group">
-                    <label>Título</label>
-                    <input type="text" class="form-control">
+                    <label [ngClass]="{'text-view' : title !=''}">Título (*)</label>
+                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Título (*)"
+                    [(ngModel)]="title">
                 </div>
 
                 <div class="form-group">
-                    <label>Duración</label>
-                    <input type="text" class="form-control">
+                    <label [ngClass]="{'text-view' : time !=''}">Duración (*)</label>
+                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Duración (*)"
+                    [(ngModel)]="time">
                 </div>
 
                 <div class="form-group">
-                    <label>Género</label>
-                    <input type="text" class="form-control">
+                    <label [ngClass]="{'text-view' : class !=''}">Género (*)</label>
+                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Género (*)"
+                    [(ngModel)]="class">
                 </div>
 
                 <div class="form-group">
-                    <label>Artista</label>
-                    <input type="text" class="form-control">
+                    <label [ngClass]="{'text-view' : compositor !=''}">Artista (*)</label>
+                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Artista (*)"
+                    [(ngModel)]="compositor">
                 </div>
 
                 <input type="submit" class="btn btn-secondary" value="Crear canción">

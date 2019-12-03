@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-index.component.css']
 })
 export class ContentIndexComponent implements OnInit {
+  nombre='';
+  edad='';
+  correo='';
+  password='';
 
   constructor() { }
 

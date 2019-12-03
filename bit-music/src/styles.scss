@@ -18,6 +18,11 @@ body {
     overflow-x: hidden;
 }
 
+.text-center{
+    text-align: center;
+    width: 100%;
+}
+
 /* Botones */
 .btn-primary {
     color: rgb(226, 0, 49);
@@ -25,6 +30,10 @@ body {
     border-radius: 0;
     background-color: white;
     transition: all .4s;
+}
+
+.btn-lg{
+    border-radius: 5px;
 }
 
 .btn-primary:hover {
@@ -40,24 +49,26 @@ body {
 }
 
 .btn-secondary:hover {
-    color: rgb(226, 0, 49);
+    color: rgb(187, 3, 43);
     background-color: rgb(235, 235, 235);
 }
 
 /* Cards */
 .card {
-    border-radius: 0;
+    background-color: rgba(1, 12, 17, 0.705);
+    border-radius: 10px;
     border: none;
 }
 
 .card-header {
-    background-color: white;
     border: none;
+    text-align: center;
+    margin-top: 10px;
 }
 
-.card-header h3 {
-    color: rgb(226, 0, 49);
-   
+.card-header h2 {
+    color: rgb(219, 5, 51);
+    font-size: 50px;
 }
 
 .card-bit {
@@ -70,19 +81,36 @@ body {
 
 /* Formularios */
 input[type=text], input[type=password], input[type=email] {
-    border-radius: 0;
+    border-radius: 0px;
     border: none;
     border-bottom: 1px solid black;
+    background-color: rgba(1, 12, 17, 0);
+    color: white;
+}
+
+.aling-right{
+    text-align: right;
 }
 
 input[type=text]:active, input[type=password]:active, input[type=email]:active {
     color: rgb(226, 0, 49);
+    background-color: rgba(1, 12, 17, 0);
+}
+
+label{
+    color: rgba(255, 255, 255, 0);
+}
+
+.text-view{
+    color: white;
 }
 
 .form-control:focus{
     border-color: transparent;
     box-shadow: none;
-    border-bottom: 1px solid  rgb(226, 0, 49);
+    border-bottom: 2px solid  rgb(226, 0, 49);
+    background-color: rgba(1, 12, 17, 0);
+    color: white;
 }
 
 
@@ -123,13 +151,43 @@ input[type=text]:active, input[type=password]:active, input[type=email]:active {
     object-fit: cover;
 }
 
+@media only screen and (max-width: 980px){
+    .center-responsive{
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        h2{
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 760px){
+    .navbar{
+
+        .aling-right{
+            text-align: center;
+
+        }
+    }
+    
+}
+
 @media only screen and (max-width: 480px){
     .navbar-brand {
         font-size: 61px;
         text-align: center;
         margin-right: 0;
     }
+    .center-responsive{
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 }
+
 @media only screen and (max-width: 320px) {
     .navbar-brand {
         font-size: 61px;
@@ -143,5 +201,10 @@ input[type=text]:active, input[type=password]:active, input[type=email]:active {
         text-align: center;
         font-size: 30px;
        
+    }
+    .center-responsive{
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 }

@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongToolsComponent implements OnInit {
 
+  title='';
+  time='';
+  class='';
+  compositor='';
+
+
   constructor() { }
 
   ngOnInit() {

@@ -2,12 +2,14 @@
 
     <div class="card card-bit">
         <div class="card-header">
-            <h3>Actualizar mis datos</h3>
+            <h2>Actualizar mis datos</h2>
         </div>
         <div class="card-body">
-            <form>
+            <form name="form" id="form">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div class="">
+                        <!-- <img src="../../../assets/img/user-profile.png" alt="" *ngIf="!_usuarioService.usuario || _usuarioService.usuario.imagen==''" >
+                        <img src="{{'data:image/jpg;base64,' + _usuarioService.usuario.imagen}}" *ngIf="_usuarioService.usuario && _usuarioService.usuario.imagen!=''" > -->
                         <img src="../../../assets/img/user-profile.png" alt="">
                     </div>
                     <div class="">
@@ -16,23 +18,27 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" class="form-control">
+                    <label [ngClass]="{'text-view' : name !=''}">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre"
+                    [(ngModel)]="this.name">
                 </div>
 
                 <div class="form-group">
-                    <label>Edad</label>
-                    <input type="text" class="form-control">
+                    <label [ngClass]="{'text-view' : age !=''}">Edad</label>
+                    <input type="text" class="form-control" id="edad" name="edad" required placeholder="Edad"
+                    [(ngModel)]="this.age">
                 </div>
 
                 <div class="form-group">
-                    <label>Correo</label>
-                    <input type="email" class="form-control" placeholder="@">
+                    <label [ngClass]="{'text-view' : email !=''}">Correo</label>
+                    <input type="email" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Correo"
+                    [(ngModel)]="this.email">
                 </div>
 
                 <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" class="form-control">
+                    <label [ngClass]="{'text-view' : password !=''}">Contraseña</label>
+                    <input type="password" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Contraseña"
+                    [(ngModel)]="this.password">
                 </div>
                 <input type="submit" class="btn btn-secondary" value="Actualizar Datos">
             </form>
