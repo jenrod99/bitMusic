@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : name !=''}">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre"
-                    [(ngModel)]="this.name">
+                    [(ngModel)]="name">
                 </div>
 
                 <div class="form-group">
@@ -31,13 +31,13 @@
 
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : email !=''}">Correo</label>
-                    <input type="email" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Correo"
+                    <input type="email" class="form-control" id="correo" name="correo" required placeholder="Correo"
                     [(ngModel)]="this.email">
                 </div>
 
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : password !=''}">Contraseña</label>
-                    <input type="password" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Contraseña"
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="Contraseña"
                     [(ngModel)]="this.password">
                 </div>
                 <input type="submit" class="btn btn-secondary" value="Actualizar Datos">
