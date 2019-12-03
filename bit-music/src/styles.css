@@ -57,6 +57,7 @@ body {
 
 .card-header h3 {
     color: rgb(226, 0, 49);
+   
 }
 
 .card-bit {
@@ -95,7 +96,6 @@ input[type=text]:active, input[type=password]:active, input[type=email]:active {
     font-size: 75px;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.897);
-    letter-spacing: 1px;
 }
 
 .navbar-brand:hover {
@@ -121,4 +121,27 @@ input[type=text]:active, input[type=password]:active, input[type=email]:active {
     width: 100%;
     max-height: 70vh;
     object-fit: cover;
+}
+
+@media only screen and (max-width: 480px){
+    .navbar-brand {
+        font-size: 61px;
+        text-align: center;
+        margin-right: 0;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .navbar-brand {
+        font-size: 61px;
+        text-align: center;
+        margin-right: 0;
+    }
+    .card-bit{
+        padding: 0;
+    }
+    .card-header h3 {
+        text-align: center;
+        font-size: 30px;
+       
+    }
 }
