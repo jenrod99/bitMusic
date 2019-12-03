@@ -5,17 +5,20 @@
             <h5 class="card-title">Iniciar sesión</h5>
         </div>
         <div class="modal-body d-flex justify-content-center">
-            <form class="col-11 mt-2 mb-2 d-flex flex-column ">
+            <form class="col-11 mt-2 mb-2 d-flex flex-column" #loginForm="ngForm" (ngSubmit)="login()" ngNativeValidate>
                 <div class="form-group">
                     <label for="emailLog" class="mb-0">Usuario</label>
-                    <input type="email" class="form-control" id="emailLog" placeholder="@">
+                    <input type="email" class="form-control" id="emailLog" placeholder="@" #correo="ngModel" name="correo" [(ngModel)]="usuario.correo" required>
                 </div>
                 <div class="form-group">
                     <label for="contrasenaLog" class="mb-0">Contraseña</label>
-                    <input type="password" class="form-control form-control-login" id="contrasenaLog" >
+                    <input type="password" class="form-control form-control-login" id="contrasenaLog" #password="ngModel" name="password" [(ngModel)]="usuario.password" required>
                 </div>
-
                 <button type="submit" class="btn btn-primary btn-login align-self-center">Iniciar Sesión</button>
+                <br><br>
+                <div *ngIf="loginCorrecto" class="alert alert-danger">
+                    {{loginCorrecto}}
+                </div>
             </form>
         </div>
     </div>
