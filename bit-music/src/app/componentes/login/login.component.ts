@@ -11,8 +11,6 @@ import { CompartidoService } from 'src/app/servicios/compartido.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   usuario: Usuario;
-  emailLog='';
-  passwordLog='';
   loginCorrecto;
 
   constructor(
@@ -23,26 +21,41 @@ export class LoginComponent implements OnInit, OnDestroy {
     if(localStorage.getItem("sesion") != null) {
       this._router.navigate(['/menu']);
     }
-    // this._usuarioService.usuario = new Usuario ('', '', null, '', '', '', '')
+    this._usuarioService.usuario = new Usuario ('',  null, '', '', '', '', '')
   }
 
   ngOnInit() {
   }
 
-  login(){
-    if(!this.emailLog || !this.passwordLog){
-      return
-    }
-    this._usuarioService.usuario={
-      nombre:'Camila Perez', 
-      edad:19, _id:'2de3', 
-      correo:'camp@gmail.com', 
-      password:'1234',
-      imagen:'data:image/jpeg;base64,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',
-      role:'ADMIN'
-    }
-    this._router.navigate(['/menu']);
-
+  login() {
+    this._usuarioService.login(this.usuario).subscribe(
+      (response: any) => {
+        if (response.usuario) {
+          let usuarioLogueado = new Usuario(
+            response.usuario._id,
+            response.usuario.nombre,
+            response.usuario.edad,
+            response.usuario.correo,
+            response.usuario.password,
+            response.usuario.imagen,
+            response.usuario.role
+          )
+            
+            localStorage.setItem
+            ("sesion",JSON.stringify(usuarioLogueado));
+            this._compartidoService.emitirLogueo(true);
+            this._router.navigate(['/menu'])
+            
+        } else {
+          this.loginCorrecto = 
+          "los datos ingresados son incorrectos  ";
+        }
+      }, error => {
+        if (error != null) {
+          console.log(error)
+        }
+      }
+    )
   }
 
   ngOnDestroy () {

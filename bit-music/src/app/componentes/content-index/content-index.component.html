@@ -69,28 +69,30 @@
                 <div class="card-body">
                     <form #loginForm="ngForm" (ngSubmit)="registrar()" ngNativeValidate>
                         <div class="form-group">
-                            <label for="nombre" [ngClass]="{'text-view' : nombre !=''}">Nombre (*)</label>
+                            <label for="nombre" [ngClass]="{'text-view' : usuario.nombre !=''}">Nombre (*)</label>
                             <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Nombre (*)"
-                            [(ngModel)]="nombre">
+                            [(ngModel)]="usuario.nombre">
                         </div>
                         <div class="form-group">
-                            <label for="edad" [ngClass]="{'text-view' : edad !=''}">Edad (*)</label>
+                            <label for="edad" [ngClass]="{'text-view' : usuario.edad}">Edad (*)</label>
                             <input type="text" class="form-control" id="formGroupExampleInput2" name="edad" required placeholder="Edad (*)"
-                            [(ngModel)]="edad">
+                            [(ngModel)]="usuario.edad">
                         </div>
                         <div class="form-group">
-                            <label for="email" [ngClass]="{'text-view' : correo !=''}">Correo (*)</label>
+                            <label for="email" [ngClass]="{'text-view' : usuario.correo !=''}">Correo (*)</label>
                             <input type="email" class="form-control" id="formGroupExampleInput3" placeholder="Correo (*)"
-                                name="correo" required [(ngModel)]="correo">
+                                name="correo" required [(ngModel)]="usuario.correo">
                         </div>
                         <div class="form-group">
-                            <label for="contraseña" [ngClass]="{'text-view' : password !=''}">Contraseña (*)</label>
+                            <label for="contraseña" [ngClass]="{'text-view' : usuario.password !=''}">Contraseña (*)</label>
                             <input type="password" class="form-control" id="formGroupExampleInput4" name="password"
-                                required placeholder="Contraseña (*)" [(ngModel)]="password">
+                                required placeholder="Contraseña (*)" [(ngModel)]="usuario.password">
                         </div>
                         <div class="aling-right">
                             <input type="submit" class="btn btn-secondary" value="Registrarme">
                         </div>
+
+                        {{registroCorrecto}}
                     </form>
                 </div>
             </div>

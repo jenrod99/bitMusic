@@ -92,6 +92,11 @@ input[type=text], input[type=password], input[type=email] {
     text-align: right;
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: white;
+    opacity: 1;
+  }
+
 input[type=text]:active, input[type=password]:active, input[type=email]:active {
     color: rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
