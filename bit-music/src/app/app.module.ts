@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ContentIndexComponent } from './componentes/content-index/content-index.component';
@@ -32,6 +33,7 @@ import { UserProfileComponent } from './componentes/user-profile/user-profile.co
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
