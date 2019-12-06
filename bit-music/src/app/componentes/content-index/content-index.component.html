@@ -12,7 +12,7 @@
                     <div class="carousel-item active">
                         <img class="carousel-slide d-block w-100"
                             data-src="holder.js/900x300?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
-                            alt="First slide [900x300]" src="../../../assets/img/bg5.jpg" data-holder-rendered="true">
+                            alt="First slide [900x300]" src="../../../assets/img/1.png" data-holder-rendered="true">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Tu música donde quieras</h3>
                             <p>¡Crea tu propia colección de canciones!</p>
@@ -21,7 +21,7 @@
                     <div class="carousel-item">
                         <img class="carousel-slide d-block w-100"
                             data-src="holder.js/900x300?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide"
-                            alt="Second slide [900x300]" src="../../../assets/img/bg7.jpg" data-holder-rendered="true">
+                            alt="Second slide [900x300]" src="../../../assets/img/2.png" data-holder-rendered="true">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Sube y edita tus canciones favoritas</h3>
                             <p>Cuantas veces quieras</p>
@@ -30,7 +30,7 @@
                     <div class="carousel-item">
                         <img class="carousel-slide d-block w-100"
                             data-src="holder.js/900x300?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide"
-                            alt="Second slide [900x300]" src="../../../assets/img/car3.jpg" data-holder-rendered="true">
+                            alt="Second slide [900x300]" src="../../../assets/img/3.png" data-holder-rendered="true">
                         <div class="carousel-caption d-none d-md-block">
                             <h3>Mantén tu música cerca</h3>
                             <p>Una lista de reproducción que puedes escuchar al instante</p>
@@ -70,28 +70,27 @@
                     <form #loginForm="ngForm" (ngSubmit)="registrar()" ngNativeValidate>
                         <div class="form-group">
                             <label for="nombre" [ngClass]="{'text-view' : usuario.nombre !=''}">Nombre (*)</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Nombre (*)"
-                            [(ngModel)]="usuario.nombre">
+                            <input type="text" class="form-control" id="formGroupExampleInput" #nombre="ngModel" name="nombre" placeholder="Nombre (*)"
+                            [(ngModel)]="usuario.nombre" required>
                         </div>
                         <div class="form-group">
                             <label for="edad" [ngClass]="{'text-view' : usuario.edad}">Edad (*)</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" name="edad" required placeholder="Edad (*)"
-                            [(ngModel)]="usuario.edad">
+                            <input type="text" class="form-control" id="formGroupExampleInput2" #edad="ngModel" name="edad" placeholder="Edad (*)"
+                            [(ngModel)]="usuario.edad" required>
                         </div>
                         <div class="form-group">
                             <label for="email" [ngClass]="{'text-view' : usuario.correo !=''}">Correo (*)</label>
                             <input type="email" class="form-control" id="formGroupExampleInput3" placeholder="Correo (*)"
-                                name="correo" required [(ngModel)]="usuario.correo">
+                                #correo="ngModel" name="correo" [(ngModel)]="usuario.correo" required>
                         </div>
                         <div class="form-group">
                             <label for="contraseña" [ngClass]="{'text-view' : usuario.password !=''}">Contraseña (*)</label>
-                            <input type="password" class="form-control" id="formGroupExampleInput4" name="password"
-                                required placeholder="Contraseña (*)" [(ngModel)]="usuario.password">
+                            <input type="password" class="form-control" id="formGroupExampleInput4" #password="ngModel" name="password" placeholder="Contraseña (*)" [(ngModel)]="usuario.password"
+                            required>
                         </div>
                         <div class="aling-right">
                             <input type="submit" class="btn btn-secondary" value="Registrarme">
                         </div>
-
                         {{registroCorrecto}}
                     </form>
                 </div>

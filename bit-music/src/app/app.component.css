@@ -1,13 +1,16 @@
-.total-width{
+.total-width {
     width: 100%;
 }
 
 .container{
     padding-right: 0px;
-    margin-right: 3.2%;
 }
 
-p{
+p {
     font-size: 25px;
+    color: white;
+}
+
+::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
     color: white;
 }

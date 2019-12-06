@@ -21,11 +21,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     if(localStorage.getItem("sesion") != null) {
       this._router.navigate(['/menu']);
     }
-    this._usuarioService.usuario = new Usuario ('',  null, '', '', '', '', '')
+    this._usuarioService.usuario = new Usuario ('', null, '', '', '', '')
   }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+    document.getElementById('footer').style.position = "fixed";
+  } 
 
   login() {
     this._usuarioService.login(this.usuario).subscribe(
@@ -58,8 +59,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     )
   }
 
-  ngOnDestroy () {
-    
+  ngOnDestroy() {
+    document.getElementById('footer').style.position = "relative";
   }
 
 }
