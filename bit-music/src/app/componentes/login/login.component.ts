@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     if(localStorage.getItem("sesion") != null) {
       this._router.navigate(['/menu']);
     }
-    this._usuarioService.usuario = new Usuario ('', null, '', '', '', '')
+    this.usuario = new Usuario ('', null, '', '', '', '')
   }
 
    ngOnInit() {
