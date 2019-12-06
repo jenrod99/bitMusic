@@ -1,17 +1,21 @@
 /* Importación de fuente */
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Calistoga|Catamaran&display=swap');
 
 /* Fuentes */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Heebo' !important;
+    font-family: 'Calistoga', cursive;
     font-weight: 900;
+}
+
+*{
+    font-family: 'Catamaran', sans-serif;
 }
 
  
 /* General */
 body {
-    background-image: url(./assets/img/bg-def.jpg);
+    background-image: url(./assets/img/8.gif);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -125,16 +129,17 @@ label{
 }
 
 .navbar-brand {
-    font-family: 'Heebo';
+    font-family: 'Calistoga';
     font-size: 75px;
-    font-weight: 900;
     color: rgba(255, 255, 255, 0.897);
+    letter-spacing: 1px;
 }
 
 .navbar-brand:hover {
     letter-spacing: 0px;
     transition: .3s;
     color: white;
+    letter-spacing: 0px;
 }
 
 .dot {

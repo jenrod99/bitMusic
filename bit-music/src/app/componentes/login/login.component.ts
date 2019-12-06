@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    document.getElementById('footer').style.position = "fixed";
   }
 
   login() {
@@ -58,8 +59,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     )
   }
 
-  ngOnDestroy () {
-    
+  ngOnDestroy() {
+    document.getElementById('footer').style.position = "relative";
   }
 
 }
