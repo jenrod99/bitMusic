@@ -9,7 +9,7 @@
                     <form class="col-11 mt-2 mb-2 d-flex flex-column" #loginForm="ngForm"
                         ngNativeValidate>
                         <div class="form-group">
-                            <label for="emailLog" class="mb-0" [ngClass]="{'text-view' : usuario.correo !=''}">Usuario (*)</label>
+                            <label for="email"  class="mb-0">Usuario (*)</label>
                             <input type="email" class="form-control" id="emailLog" placeholder="Usuario (*)" #correo="ngModel"
                                 name="correo" [(ngModel)]="usuario.correo" required>
                         </div>

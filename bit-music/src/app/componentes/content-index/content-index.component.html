@@ -70,28 +70,27 @@
                     <form #loginForm="ngForm" (ngSubmit)="registrar()" ngNativeValidate>
                         <div class="form-group">
                             <label for="nombre" [ngClass]="{'text-view' : usuario.nombre !=''}">Nombre (*)</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" name="nombre" required placeholder="Nombre (*)"
-                            [(ngModel)]="usuario.nombre">
+                            <input type="text" class="form-control" id="formGroupExampleInput" #nombre="ngModel" name="nombre" placeholder="Nombre (*)"
+                            [(ngModel)]="usuario.nombre" required>
                         </div>
                         <div class="form-group">
                             <label for="edad" [ngClass]="{'text-view' : usuario.edad}">Edad (*)</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" name="edad" required placeholder="Edad (*)"
-                            [(ngModel)]="usuario.edad">
+                            <input type="text" class="form-control" id="formGroupExampleInput2" #edad="ngModel" name="edad" placeholder="Edad (*)"
+                            [(ngModel)]="usuario.edad" required>
                         </div>
                         <div class="form-group">
                             <label for="email" [ngClass]="{'text-view' : usuario.correo !=''}">Correo (*)</label>
                             <input type="email" class="form-control" id="formGroupExampleInput3" placeholder="Correo (*)"
-                                name="correo" required [(ngModel)]="usuario.correo">
+                                #correo="ngModel" name="correo" [(ngModel)]="usuario.correo" required>
                         </div>
                         <div class="form-group">
                             <label for="contraseña" [ngClass]="{'text-view' : usuario.password !=''}">Contraseña (*)</label>
-                            <input type="password" class="form-control" id="formGroupExampleInput4" name="password"
-                                required placeholder="Contraseña (*)" [(ngModel)]="usuario.password">
+                            <input type="password" class="form-control" id="formGroupExampleInput4" #password="ngModel" name="password" placeholder="Contraseña (*)" [(ngModel)]="usuario.password"
+                            required>
                         </div>
                         <div class="aling-right">
                             <input type="submit" class="btn btn-secondary" value="Registrarme">
                         </div>
-
                         {{registroCorrecto}}
                     </form>
                 </div>
