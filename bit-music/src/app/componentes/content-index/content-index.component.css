@@ -8,7 +8,11 @@
     transition: .4s;
 }
 .avisoRegistro{
-    color: white;
+    color:#155724;
+    background-color:#d4edda;
+    border-radius: 2px;
+    padding: .5em;
+    font-weight: 700;
     text-align: center;
     margin-top: 1em;
 }
