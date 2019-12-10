@@ -14,70 +14,84 @@ export class UserProfileComponent implements OnInit {
   actualizacionCorrecta;
   url = "http://localhost:3977/api/";
 
-  /* name='';
-  age='';
-  email='';
-  password='';
-
-  title=''; */
+  title = '';
 
   constructor(
     private _usuarioService: UsuarioService,
   ) {
     /* this.getUser(); */
-   }
-
-   ngOnInit() {
-    this.usuario = JSON.parse(localStorage.getItem("sesion"))
-    console.log(this.usuario)
   }
 
-  actualizarDatos(){
-    this._usuarioService.actualizarUsuario(this.usuario._id,this.usuario).subscribe(
-      (response:any)=>{
-        if(response.usuario){
-          if(this.filesToUpload != undefined){
-              this._usuarioService.cargarImagenUsuario(this.filesToUpload,this.usuario._id)
+  ngOnInit() {
+    this.getUser();
+  }
+
+  getSession() {
+    return localStorage.getItem("sesion") ? JSON.parse(localStorage.getItem("sesion")) : ''
+  }
+
+  getUser() {
+    this.usuario = this.getSession();
+  }
+  actualizarDatos() {
+    this._usuarioService.actualizarUsuario(this.usuario._id, this.usuario).subscribe(
+      (response: any) => {
+        if (response.usuario) {
+          let actualizadosDatos = true;
+          if (this.filesToUpload != undefined) {
+            actualizadosDatos = false;
+            this._usuarioService.cargarImagenUsuario(this.filesToUpload, this.usuario._id)
               .subscribe(
-                (response:any)=>{
-                  if(response.usuario){
+                (response: any) => {
+                  if (response.usuario) {
                     this.actualizacionCorrecta = "Datos actualizados correctamente";
                     this.usuario = response.usuario;
-                    localStorage.setItem("sesion",JSON.stringify(this.usuario));
-                  }else{
+                    localStorage.setItem("sesion", JSON.stringify(this.usuario));
+                    setTimeout(() => {
+                      this.actualizacionCorrecta = "";
+                    }, 3000)
+                  } else {
                     this.actualizacionCorrecta = "Los datos no se actualizaron por completo. Contacta al administrador de la aplicacion";
                   }
-                },error=>{
+                }, error => {
                   if (error != null) {
                     console.log(error)
                   }
                 }
               )
           };
-          localStorage.setItem("sesion",JSON.stringify(this.usuario));
-        }else{
+          if (actualizadosDatos) {
+            this.actualizacionCorrecta = "Datos actualizados correctamente";
+            localStorage.setItem("sesion", JSON.stringify(this.usuario));
+            setTimeout(() => {
+              this.actualizacionCorrecta = "";
+            }, 3000)
+          }
+        } else {
           this.actualizacionCorrecta = "No se han podido actualizar sus datos, comuniquese con el administrador de la aplicacion";
         }
-      },error=>{
+      }, error => {
         if (error != null) {
           console.log(error)
         }
       }
     )
-  }  fileChangeEvent(fileInput: any) {
+  }
+  fileChangeEvent(fileInput: any) {
     this.filesToUpload = <File>fileInput.target.files[0];//recoger archivos seleccionados en el input
-  }}
+  }
+}
 
 
   // Anterior
 
-  /* getUser(){
-    if(this._usuarioService.usuario){
-      this.name = this._usuarioService.usuario.nombre? this._usuarioService.usuario.nombre : '';
-      this.age = this._usuarioService.usuario.edad? this._usuarioService.usuario.edad : '';
-      this.email = this._usuarioService.usuario.correo? this._usuarioService.usuario.correo : '';
-      this.password = this._usuarioService.usuario.password? this._usuarioService.usuario.password : '';
-    }
-  } */
+/* getUser(){
+  if(this._usuarioService.usuario){
+    this.name = this._usuarioService.usuario.nombre? this._usuarioService.usuario.nombre : '';
+    this.age = this._usuarioService.usuario.edad? this._usuarioService.usuario.edad : '';
+    this.email = this._usuarioService.usuario.correo? this._usuarioService.usuario.correo : '';
+    this.password = this._usuarioService.usuario.password? this._usuarioService.usuario.password : '';
+  }
+} */
 
 

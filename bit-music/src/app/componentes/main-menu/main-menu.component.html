@@ -2,10 +2,13 @@
     <div class="col-12 col-md-6 mt-3">
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-primary btn-tab visible" id="firstTab"
-                (click)="asignarBoton('editarCanciones')" *ngIf="usuario?.role =='ROLE-ADMIN'">Crear
+                (click)="asignarBoton('editarCanciones')" *ngIf="session?.role =='ROLE_ADMIN'"
+                [ngClass]="{'btn-tab-active' : boton == 'editarCanciones'}">Crear
                 Canciones</button>
-            <button type="button" class="btn btn-primary btn-tab" (click)="asignarBoton('perfil')">Mi Perfíl</button>
-            <button type="button" class="btn btn-primary btn-tab" (click)="asignarBoton('buscar')">Buscar
+            <button type="button" class="btn btn-primary btn-tab" (click)="asignarBoton('perfil')"
+                [ngClass]="{'btn-tab-active' : boton == 'perfil'}">Mi Perfíl</button>
+            <button type="button" class="btn btn-primary btn-tab" (click)="asignarBoton('buscar')"
+                [ngClass]="{'btn-tab-active' : boton == 'buscar'}">Buscar
                 Canciones</button>
         </div>
     </div>

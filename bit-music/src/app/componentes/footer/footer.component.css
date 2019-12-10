@@ -9,10 +9,16 @@ footer{
 a{
     color: white !important;
 }
+
 .fab{
     font-size: 15pt;
     margin: .5em 0;
 }
+
+.fab:hover{
+    color: rgb(219, 5, 51) !important;
+}
+
 .fa-facebook{
     margin: 0 .5em;
 }

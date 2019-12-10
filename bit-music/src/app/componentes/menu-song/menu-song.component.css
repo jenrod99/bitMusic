@@ -1,17 +1,49 @@
 .player-box{
     background-color: rgba(0, 0, 0, .5);
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 1em;
-    width: 90%;
-    margin: .5em 0;
+    width: 100%;
+    margin: .3em 0;
+    position: relative;
 }
 p{
     margin: 0;
 }
-.fa-play{
-    margin: 0 2em 0 2em;
+
+.iconoCancion-play{
+    color: #db0533;
+    position: absolute;
+    right: 50px;
 }
 
+.icono-cancion-play{
+    right: 35px;
+}
+
+.iconoCancion-trash{
+    color: #db0533;
+    position: absolute;
+    right: 20px;
+}
+
+
+li{
+    list-style-type:none;
+    color: white;
+}
+
+ul{
+    padding: 0px;
+}
+
+.card-bit{
+    margin-top: 32px;
+}
+
+.card-body{
+    max-height: 400px;
+    overflow-y: auto;
+}
 
 @media only screen and (max-width: 480px) {
     .player-box{

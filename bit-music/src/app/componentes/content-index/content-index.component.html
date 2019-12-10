@@ -49,7 +49,9 @@
         </div>
     </div>
 </div>
+<div class="line">
 
+</div>
 <div class="container">
     <div class="row p-3">
         <div class="col-12 col-lg-6 d-flex align-content-center flex-wrap center-responsive">
@@ -87,11 +89,16 @@
                             <input type="password" class="form-control" id="formGroupExampleInput4" #password="ngModel"
                                 name="password" placeholder="Contraseña (*)" [(ngModel)]="usuario.password" required>
                         </div>
-                        <div class="aling-right">
+                        <div class="aling-right" *ngIf="!registroCorrecto">
                             <input type="submit" class="btn btn-secondary" value="Registrarme">
                         </div>
-                        <div class="avisoRegistro">
+                        <div class="avisoRegistro" *ngIf="registroCorrecto">
                             {{registroCorrecto}}
+                        </div>
+                        <div class="text-center" *ngIf="registroCorrecto">
+                            <div class="spinner-border " role="status" aria-hidden="true">
+                            </div>
+                            <div class="text-spinner">Iniciando sesión</div>
                         </div>
                     </form>
                 </div>

@@ -1,36 +1,52 @@
 <div class="card-cont">
     <div class="card card-bit">
         <div class="card-header">
-            <h2>Crear canción</h2>
+            <h2>{{tituloComponente}}</h2>
         </div>
         <div class="card-body">
 
-            <form>
+            <form #updateForm="ngForm" (ngSubmit)="manejoCancion()" ngNativeValidate>
                 <div class="form-group">
-                    <label [ngClass]="{'text-view' : title !=''}">Título (*)</label>
-                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Título (*)"
-                    [(ngModel)]="title">
+                    <label [ngClass]="{'text-view' : cancion.titulo !=''}">Título (*)</label>
+                    <input type="text" class="form-control" #titulo="ngModel" name="titulo" [(ngModel)]="cancion.titulo"
+                        required [disabled]="cargarFichero" placeholder="Título (*)">
                 </div>
 
                 <div class="form-group">
-                    <label [ngClass]="{'text-view' : time !=''}">Duración (*)</label>
-                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Duración (*)"
-                    [(ngModel)]="time">
+                    <label [ngClass]="{'text-view' : cancion.duracion !=''}">Duración (*)</label>
+                    <input type="text" class="form-control" name="duracion" #duracion="ngModel"
+                        [(ngModel)]="cancion.duracion" [disabled]="cargarFichero" required 
+                        placeholder="Duración (*)">
                 </div>
 
                 <div class="form-group">
-                    <label [ngClass]="{'text-view' : class !=''}">Género (*)</label>
-                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Género (*)"
-                    [(ngModel)]="class">
+                    <label [ngClass]="{'text-view' : cancion.genero !=''}">Género (*)</label>
+                    <input type="text" class="form-control" #genero="ngModel" name="genero" [(ngModel)]="cancion.genero"
+                        [disabled]="cargarFichero" required placeholder="Género (*)">
                 </div>
 
                 <div class="form-group">
-                    <label [ngClass]="{'text-view' : compositor !=''}">Artista (*)</label>
-                    <input type="text" class="form-control"id="formGroupExampleInput" name="nombre" required placeholder="Artista (*)"
-                    [(ngModel)]="compositor">
+                    <label [ngClass]="{'text-view' : cancion.artista !=''}">Artista (*)</label>
+                    <input type="text" class="form-control" #artista="ngModel" name="artista"
+                        [(ngModel)]="cancion.artista" [disabled]="cargarFichero" required
+                        placeholder="Artista (*)">
                 </div>
-
-                <input type="submit" class="btn btn-secondary" value="Crear canción">
+                <div *ngIf="cargarFichero">
+                    <p>
+                        <label> Sube el fichero de audio</label>
+                        <br>
+                        <input type="file" placeholder="Subir fichero" (change)="fileChangeEvent($event)">
+                    </p>
+                </div>
+                <div class="dflex">
+                    <button type="submit" class="btn btn-secondary">{{ tituloComponente }}</button>
+                </div>
+                <br><br>
+                <div *ngIf="cancionCorrecta" class="alert alert-sucess align-items-center">
+                    {{cancionCorrecta}}
+                    <div class="spinner-border ml-auto" *ngIf="actualizacionCorrecta" role="status" aria-hidden="true">
+                    </div>
+                </div>
             </form>
         </div>
     </div>

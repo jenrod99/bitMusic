@@ -8,13 +8,14 @@ var Cancion = require('../models/cancion')
 
 function crearCancion(req,res){
     var cancion = new Cancion();
+    console.log(req)
     var params = req.body;
 
     cancion.titulo = params.titulo;
     cancion.duracion = params.duracion;
     cancion.genero = params.genero;
     cancion.artista = params.artista;
-
+    
     cancion.save((err,cancionCreada)=>{
         if(err){
             res.status(500).send({

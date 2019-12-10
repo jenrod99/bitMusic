@@ -12,7 +12,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Catamaran', sans-serif;
 }
 
- 
 /* General */
 body {
     background-image: url(./assets/img/8.jpg);
@@ -25,6 +24,14 @@ body {
 .text-center{
     text-align: center;
     width: 100%;
+}
+
+.spinner-border{
+    color: rgb(219, 5, 51);
+}
+
+.text-spinner{
+    color: rgb(219, 5, 51);
 }
 
 /* Botones */
@@ -64,6 +71,7 @@ body {
     border: none;
     text-align: center;
     margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .card-header h2 {
@@ -84,7 +92,8 @@ input[type=text], input[type=password], input[type=email] {
     border-radius: 0px;
     border: none;
     background-color: rgba(1, 12, 17, 0);
-    color: white;
+    color: white;   
+    border-bottom: 2px solid rgb(26, 26, 26);
 }
 
 .aling-right{
@@ -104,6 +113,25 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
     background-color: rgba(1, 12, 17, 0);
     color: white;
     box-shadow: none;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: rgba(1, 12, 17, 0);
+    color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 2px solid rgb(26, 26, 26);
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 label{
@@ -126,13 +154,23 @@ label{
 } */
 
 /* Navbar */
+
+.header{
+    width: 100%;
+    background-image: url("assets/img/fondo2.png");
+    background-size: 100% 110px;
+    margin-bottom: 10px;
+    position: fixed;
+    z-index: 100
+}
+
 .navbar {
     background-color: transparent
 }
 
 .navbar-brand {
     font-family: 'Calistoga';
-    font-size: 75px;
+    font-size: 55px;
     color: rgba(255, 255, 255, 0.897);
     letter-spacing: 1px;
 }
@@ -153,6 +191,13 @@ label{
     transition: .1s;
 }
 
+.alert-sucess{
+    text-align: center;
+    color: rgb(187, 3, 43);
+    font-weight: bold;
+    background-color: black;
+    margin-top: 10px;
+}
 
 /* Slider */
 

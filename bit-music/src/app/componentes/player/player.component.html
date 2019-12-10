@@ -3,17 +3,32 @@
         <div class="col mb-5">
             <h2 class="mb-3">Reproducir</h2>
             <div class="d-flex flex-wrap align-items-center justify-content-center">
-                <audio src="" controls></audio>
+                <audio id="audio" preload="auto" tabindex="0" controls="">
+                    <source src="">
+                </audio>
             </div>
-            <div class="col-12 d-flex flex-column align-items-center mt-2">
+            <div class="col-12 d-flex flex-column align-items-center mb-2">
                 <div class="song d-flex flex-wrap align-items-center justify-content-center">
-                    <h5 class="mt-4 mb-2">
+                    <h5 class="mt-4 mb-2 w-100">
                         En reproducción
                     </h5>
-                    <img class="img-song" src="../../../assets/img/imgEjemplo.jpg" alt="">
-                    <p class="mt-2">Rag'n'Bone Man - Human</p>
+                    <img class="img-song w-100" src="../../../assets/img/imgEjemplo.jpg" alt="">
+                    <p class="mt-2 w-100" *ngIf="cancionActual">{{cancionActual}}</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="list">
+    <ul class="list-group list-group-flush" id="playlist" *ngFor="let cancion of canciones">
+        <li class="list-group-item itemCancion d-flex">
+            {{cancion.titulo + ' - ' + cancion.duracion}}
+            <div class="ml-auto">
+                <a data-toggle="modal" href="" class="iconoCancion ml-2" (click)="eliminarCancion(cancion)">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+        </li>
+    </ul>
 </div>
