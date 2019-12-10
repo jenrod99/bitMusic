@@ -87,7 +87,6 @@ body {
 input[type=text], input[type=password], input[type=email] {
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid black;
     background-color: rgba(1, 12, 17, 0);
     color: white;
 }
@@ -96,14 +95,17 @@ input[type=text], input[type=password], input[type=email] {
     text-align: right;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: white;
-    opacity: 1;
-  }
-
 input[type=text]:active, input[type=password]:active, input[type=email]:active {
-    color: rgb(226, 0, 49);
+    border-bottom: 2px solid rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
+    border: none;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    border: none;
+    border-bottom: 2px solid rgb(226, 0, 49);
+    background-color: rgba(1, 12, 17, 0);
+    color: white
 }
 
 label{
@@ -114,13 +116,16 @@ label{
     color: white;
 }
 
-.form-control:focus{
+.form-control {
     border-color: transparent;
     box-shadow: none;
-    border-bottom: 2px solid  rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
     color: white;
 }
+
+/* .form-control:active {
+    border-bottom: 2px solid rgb(226, 0, 49);
+} */
 
 /* Navbar */
 .navbar {
