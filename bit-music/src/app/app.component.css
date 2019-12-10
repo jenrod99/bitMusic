@@ -19,6 +19,55 @@ p {
     display: none
 }
 
+mark {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-size: 22px;
+}
+
+.space-header{
+    height: 130px;
+}
+
+.rounded-circle{
+    height: 60px;
+    width: 60px;
+    border: 2px solid black;
+}
+
+.container .container-header{
+    position: relative;
+    width: 100%;
+}
+
+.name{
+    position: absolute;
+    right: 170px;
+    top: 35px;
+    max-width: 200px;
+    line-height: 20px;
+    text-align: center;
+    cursor: default;
+}
+
+.img-session{
+        position: absolute;
+        right: 310px;
+}
+
+.button-session{
+    position: absolute;
+    right: 20px;
+}
+
+.name:hover{
+    text-decoration: underline beige;
+}
+
+.rounded-circle:hover{
+    border: white;
+}
+
 @media screen and (max-width: 768px) {
     .mini {
         display: block;
@@ -26,10 +75,18 @@ p {
     .full {
         display: none;
     }
+    .name{
+        display: none;
+    }
+    .img-session{
+        right: 100px;
+    }
+    
 }
 
-mark {
-    background-color: black;
-    color: white;
-    padding: 0 15px;
+@media screen and (max-width: 470px) {
+    .img-session{
+        display: none;
+    }
+    
 }

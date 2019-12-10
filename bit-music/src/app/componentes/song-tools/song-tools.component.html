@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
 
-            <form #updateForm="ngForm" (ngSubmit)="manejoCancion()">
+            <form #updateForm="ngForm" (ngSubmit)="manejoCancion()" ngNativeValidate>
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : cancion.titulo !=''}">Título (*)</label>
                     <input type="text" class="form-control" #titulo="ngModel" name="titulo" [(ngModel)]="cancion.titulo"
@@ -31,8 +31,6 @@
                         [(ngModel)]="cancion.artista" [disabled]="cargarFichero" required
                         placeholder="Artista (*)">
                 </div>
-
-                <!-- <input type="submit" class="btn btn-secondary" value="Crear canción"> -->
                 <div *ngIf="cargarFichero">
                     <p>
                         <label> Sube el fichero de audio</label>
@@ -44,7 +42,7 @@
                     <button type="submit" class="btn btn-secondary">{{ tituloComponente }}</button>
                 </div>
                 <br><br>
-                <div *ngIf="cancionCorrecta" class="alert alert-danger d-flex align-items-center">
+                <div *ngIf="cancionCorrecta" class="alert alert-sucess align-items-center">
                     {{cancionCorrecta}}
                     <div class="spinner-border ml-auto" *ngIf="actualizacionCorrecta" role="status" aria-hidden="true">
                     </div>

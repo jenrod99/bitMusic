@@ -10,6 +10,7 @@ export class SongToolsComponent implements OnInit {
   tituloComponente:string;
   cancion:Cancion;
   cancionCorrecta;
+  camposRequeridos='';
   cargarFichero:boolean;
   filesToUpload: File;
   actualizacionCorrecta:boolean;
@@ -30,16 +31,10 @@ export class SongToolsComponent implements OnInit {
       this.actualizarCancion();
     } 
   }
-  crearCancion(){    
-    console.log(this.cancion);
-    
+  crearCancion(){  
     this._cancionService.crearCancion(this.cancion).subscribe(
       (response:any)=>{
-        console.log(response);
-        
         if(response.cancion){
-          console.log(response.cancion);
-          
           this.cancion = response.cancion;
           this.cargarFichero = true;
           this.tituloComponente = "Actualizar cancion";

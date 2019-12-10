@@ -6,6 +6,7 @@ import {Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class CompartidoService {
+  pupUpActive=false;
 
   public cancion = new Subject<any>();
   public cancionEmitida = this.cancion.asObservable();

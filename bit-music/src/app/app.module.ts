@@ -14,6 +14,7 @@ import { MenuSongComponent } from './componentes/menu-song/menu-song.component';
 import { PlayerComponent } from './componentes/player/player.component';
 import { SongToolsComponent } from './componentes/song-tools/song-tools.component';
 import { UserProfileComponent } from './componentes/user-profile/user-profile.component';
+import { PopUpComponent } from './componentes/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UserProfileComponent } from './componentes/user-profile/user-profile.co
     MenuSongComponent,
     PlayerComponent,
     SongToolsComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,

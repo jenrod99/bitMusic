@@ -16,8 +16,6 @@ export class CancionService {
 
   crearCancion(cancion){
     let params = JSON.stringify(cancion);
-    console.log(params);
-    
     let options = {
       headers: new HttpHeaders(
         { 'Content-type':'application/json'})};

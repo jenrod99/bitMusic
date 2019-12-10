@@ -24,6 +24,26 @@ h5, p {
      object-fit: cover;
  }
 
+ .list{
+     margin-bottom: 20px;
+     max-height: 300px;
+     overflow-y: auto;
+ }
+
+ .list-group-flush:last-child .list-group-item:last-child{
+     background-color: rgba(0, 0, 0, 0.651);
+     color: white;
+ }
+
+ .list-group-flush .list-group-item:first-child{
+    background-color: rgba(0, 0, 0, 0.651);
+    color: white
+ }
+
+ .fas{
+     color: rgb(187, 3, 43);;
+ }
+
  @media only screen and (max-width: 320px){
      audio{
          width: 99%;

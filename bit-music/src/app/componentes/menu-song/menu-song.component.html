@@ -1,51 +1,29 @@
-<!-- <div class="container">
-<div class="row text-white mt-3">
-        <div class="col-12">
+<div class="card-cont">
+    <div class="card card-bit col-12">
+        <div class="card-header">
             <h2>Canciones</h2>
-            <div class="player-box">
-                <p>Nombre de la cancion - Autor - Género - 2:00
-                <i class="fas fa-play"></i>
-                <i class="fas fa-trash"></i>
-                </p>
-            </div>
-            <div class="player-box">
-                <p>Nombre de la cancion - Autor - Género - 2:00
-                <i class="fas fa-play"></i>
-                <i class="fas fa-trash"></i>
-                </p>
-            </div>
-            <div class="player-box">
-                <p>Nombre de la cancion - Autor - Género - 2:00
-                <i class="fas fa-play"></i>
-                <i class="fas fa-trash"></i>
-                </p>
-            </div>
         </div>
-    </div>
-</div> -->
-
-<div class="container">
-    <div class="row text-white mt-3">
-        <div class="col-12">
-            <h2>Canciones</h2>
-            <div class="player-box" *ngIf="existenCanciones">
+        <div class="card-body">
+            <div *ngIf="existenCanciones">
                 <ul *ngIf="existenCanciones">
                     <li *ngFor="let cancion of canciones">
-                        <p>{{cancion.titulo + ' - ' + cancion.artista + ' - ' 
-                                            + cancion.genero + ' - ' + cancion.duracion}}
-                            <a data-toggle="modal" href="#modal" class="iconoCancion"
-                                (click)="agregarListaReproduccion(cancion)">
-                                <i class="fas fa-play"></i>
-                            </a>
-                            <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'"
-                                class="iconoCancion ml-2" (click)="eliminarCancion(cancion)">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </p>
+                        <div class="player-box">
+                            <p>{{cancion.titulo + ' - ' + cancion.artista + ' - ' 
+                                        + cancion.genero + ' - ' + cancion.duracion}}
+                                <a data-toggle="modal" href="#modal" class="iconoCancion-play"
+                                    [ngClass]="{'icono-cancion-play' : usuario.role != 'ROLE_ADMIN'}"
+                                    (click)="agregarListaReproduccion(cancion)">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                                <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'"
+                                    class="iconoCancion-trash ml-2" (click)="eliminarCancion(cancion)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </p>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-

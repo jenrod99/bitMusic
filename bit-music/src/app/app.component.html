@@ -1,25 +1,35 @@
-<nav>
-  <div class="container">
+<app-pop-up *ngIf=_compartidoService.pupUpActive></app-pop-up>
+<nav class="header">
+  <div class="container container-header">
     <div class="row">
       <div class="d-flex flex-wrap justify-content-around align-items-center total-width">
-        <div class="col-9">
+        <div class="col-12">
           <a class="navbar-brand" href="#">Bit Music<span class="dot">.</span></a>
         </div>
-        <div class="col-3 aling-right">
+        <div class="name" (click)="goProfile()">
+          <p *ngIf="session && session!=''" class="lead">
+            <mark>{{session.nombre}}</mark>
+          </p>
+        </div>
+        <div class="img-session" *ngIf="session && session.imagen && session.imagen != ''" (click)="goProfile()">
+          <img class="img-fluid rounded-circle" src="{{url+'obtener-imagen-usuario/'+session.imagen}}" alt="">
+        </div>
+        <div class="img-session" *ngIf="session && (!session.imagen || session.imagen == '')" (click)="goProfile()">
+            <img class="img-fluid rounded-circle" src="../../../assets/img/user-profile.png" alt="">
+          </div>
+        <div class="button-session">
           <button *ngIf="!session || session==''" class="btn btn-primary btn-lg" type="button" (click)="goLogin()"><span
               class="full">Iniciar sesión</span><span class="mini"><i class="fas fa-sign-in-alt"></i></span></button>
           <button *ngIf="session && session!=''" class="btn btn-primary btn-lg" type="button" (click)="logOut()"><span
               class="full">Cerrar sesión</span><span class="mini"><i class="fas fa-sign-out-alt"></i></span></button>
         </div>
-        <div class="col-12">
-          <p *ngIf="session && session!=''" class="lead">
-            <mark>Bienvenida, {{session.nombre}}</mark>
-          </p>
-        </div>
       </div>
     </div>
   </div>
 </nav>
+<div class="space-header">
+
+</div>
 
 <router-outlet></router-outlet>
 <app-footer></app-footer>
