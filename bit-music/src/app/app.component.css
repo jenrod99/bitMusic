@@ -14,3 +14,22 @@ p {
 ::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
     color: white;
 }
+
+.mini {
+    display: none
+}
+
+@media screen and (max-width: 768px) {
+    .mini {
+        display: block;
+    }
+    .full {
+        display: none;
+    }
+}
+
+mark {
+    background-color: black;
+    color: white;
+    padding: 0 15px;
+}
