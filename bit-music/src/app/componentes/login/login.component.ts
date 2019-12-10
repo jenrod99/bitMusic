@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private _router: Router,
     private _compartidoService: CompartidoService
   ) {
-    if(localStorage.getItem("sesion") != null) {
+    if(localStorage.getItem("sesion")) {
       this._router.navigate(['/menu']);
     }
     this.usuario = new Usuario ('', null, '', '', '', '')
@@ -31,16 +31,16 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this._usuarioService.login(this.usuario).subscribe(
       (response: any) => {
-        if (response.usuario) {
+        if (response.usuario) {          
           let usuarioLogueado = new Usuario(
-            response.usuario._id,
             response.usuario.nombre,
             response.usuario.edad,
             response.usuario.correo,
             response.usuario.password,
+            response.usuario.role,
             response.usuario.imagen,
-            response.usuario.role
-          )
+            response.usuario._id,
+            )
             
             localStorage.setItem
             ("sesion",JSON.stringify(usuarioLogueado));

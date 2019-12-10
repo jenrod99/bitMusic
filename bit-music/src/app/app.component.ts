@@ -19,8 +19,14 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 
+  get session(){
+    return  localStorage.getItem("sesion")? JSON.parse( localStorage.getItem("sesion")): ''
+  }
+
+  
+
   logOut(){
-    this._usuarioService.usuario='';
-    this.router.navigate(['']);
+    localStorage.setItem("sesion",'');
+    this.router.navigate(['/content']);
   }
 }

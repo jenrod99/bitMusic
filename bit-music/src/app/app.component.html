@@ -6,13 +6,13 @@
           <a class="navbar-brand" href="#">Bit Music<span class="dot">.</span></a>
         </div>
         <div class="col-12 col-md-4 aling-right">
-          <p *ngIf="_usuarioService.usuario && _usuarioService.usuario.nombre!=''">
-            Bienvenida {{_usuarioService.usuario.nombre}}
+          <p *ngIf="session && session!=''">
+            Bienvenida {{session.nombre}}
           </p>
         </div>
         <div class="col-12 col-md-2 aling-right">
-          <button *ngIf="!_usuarioService.usuario || _usuarioService.usuario.nombre==''" class="btn btn-primary btn-lg" type="button" (click)="goLogin()">Iniciar sesión</button>
-          <button *ngIf="_usuarioService.usuario && _usuarioService.usuario.nombre!=''" class="btn btn-primary btn-lg" type="button" (click)="logOut()">Cerrar sesión</button>
+          <button *ngIf="!session || session==''" class="btn btn-primary btn-lg" type="button" (click)="goLogin()">Iniciar sesión</button>
+          <button *ngIf="session && session!=''" class="btn btn-primary btn-lg" type="button" (click)="logOut()">Cerrar sesión</button>
         </div>
       </div>
     </div>
