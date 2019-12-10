@@ -17,7 +17,7 @@ export class ContentIndexComponent implements OnInit {
     private _usuarioService : UsuarioService,
     private _router : Router
   ) {
-    if(localStorage.getItem("sesion") != null){
+    if(localStorage.getItem("sesion")){
       this._router.navigate(['/menu']);
     }
     this.usuario = new Usuario('', null, '', '', '', '', '');

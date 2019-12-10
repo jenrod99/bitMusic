@@ -13,10 +13,9 @@ export class MainMenuComponent implements OnInit {
   usuario = {role:'ROLE-ADMIN'}
 
   constructor(private _router: Router) {
-    // this.usuario = JSON.parse(localStorage.getItem("sesion"));
-    // if (this.usuario == null) {
-    //   this._router.navigate(['/']);
-    // }
+    if(!localStorage.getItem("sesion")) {
+      this._router.navigate(['']);
+    }
   }
 
   ngOnInit() {

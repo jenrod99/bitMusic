@@ -7,8 +7,12 @@
     font-size: 30px;
     transition: .4s;
 }
+.avisoRegistro{
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+}
 
 ::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
     color: white;
 }
-  
