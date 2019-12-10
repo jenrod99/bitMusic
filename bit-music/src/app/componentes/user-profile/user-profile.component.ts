@@ -14,12 +14,12 @@ export class UserProfileComponent implements OnInit {
   actualizacionCorrecta;
   url = "http://localhost:3977/api/";
 
-  /* name='';
+  name='';
   age='';
   email='';
   password='';
 
-  title=''; */
+  title=''; 
 
   constructor(
     private _usuarioService: UsuarioService,
@@ -43,6 +43,8 @@ export class UserProfileComponent implements OnInit {
       this.age = user.edad? user.edad : '';
       this.email = user.correo? user.correo : '';
       this.password = user.password? user.password : '';
+    }
+  }
   actualizarDatos(){
     this._usuarioService.actualizarUsuario(this.usuario._id,this.usuario).subscribe(
       (response:any)=>{
