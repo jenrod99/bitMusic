@@ -10,11 +10,8 @@
 
 .avisoRegistro{
     border-radius: 2px;
-    text-align: center;
-    color: rgb(187, 3, 43);
-    font-weight: bold;
-    background-color: black;
-    margin-top: 10px;
+    color:#d4edda;
+    font-weight: 700;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
