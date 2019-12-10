@@ -56,8 +56,7 @@
             <h2 class="text-white">Conoce BIT Music</h2>
             <p class="lead text-white">Bit music es una plataforma en la que podrás tener de forma inmediata toda tu
                 música favorita, para que no dejes de cantar y bailar</p>
-                <p class="text-white vida-musica">Llena tu vida de música <i
-                        class="fas fa-music"></i></p>
+            <p class="lead text-white vida-musica">Llena tu vida de música <i class="fas fa-music"></i></p>
         </div>
         <div class="col-12 col-lg-6 card-cont">
             <div class="card card-bit mt-3 mb-3">
@@ -68,23 +67,25 @@
                     <form #loginForm="ngForm" (ngSubmit)="registrar()" ngNativeValidate>
                         <div class="form-group">
                             <label for="nombre" [ngClass]="{'text-view' : usuario.nombre !=''}">Nombre (*)</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" #nombre="ngModel" name="nombre" placeholder="Nombre (*)"
-                            [(ngModel)]="usuario.nombre" required>
+                            <input type="text" class="form-control" id="formGroupExampleInput" #nombre="ngModel"
+                                name="nombre" placeholder="Nombre (*)" [(ngModel)]="usuario.nombre" required>
                         </div>
                         <div class="form-group">
                             <label for="edad" [ngClass]="{'text-view' : usuario.edad}">Edad (*)</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2" #edad="ngModel" name="edad" placeholder="Edad (*)"
-                            [(ngModel)]="usuario.edad" required>
+                            <input type="text" class="form-control" id="formGroupExampleInput2" #edad="ngModel"
+                                name="edad" placeholder="Edad (*)" [(ngModel)]="usuario.edad" required>
                         </div>
                         <div class="form-group">
                             <label for="email" [ngClass]="{'text-view' : usuario.correo !=''}">Correo (*)</label>
-                            <input type="email" class="form-control" id="formGroupExampleInput3" placeholder="Correo (*)"
-                                #correo="ngModel" name="correo" [(ngModel)]="usuario.correo" required>
+                            <input type="email" class="form-control" id="formGroupExampleInput3"
+                                placeholder="Correo (*)" #correo="ngModel" name="correo" [(ngModel)]="usuario.correo"
+                                required>
                         </div>
                         <div class="form-group">
-                            <label for="contraseña" [ngClass]="{'text-view' : usuario.password !=''}">Contraseña (*)</label>
-                            <input type="password" class="form-control" id="formGroupExampleInput4" #password="ngModel" name="password" placeholder="Contraseña (*)" [(ngModel)]="usuario.password"
-                            required>
+                            <label for="contraseña" [ngClass]="{'text-view' : usuario.password !=''}">Contraseña
+                                (*)</label>
+                            <input type="password" class="form-control" id="formGroupExampleInput4" #password="ngModel"
+                                name="password" placeholder="Contraseña (*)" [(ngModel)]="usuario.password" required>
                         </div>
                         <div class="aling-right">
                             <input type="submit" class="btn btn-secondary" value="Registrarme">

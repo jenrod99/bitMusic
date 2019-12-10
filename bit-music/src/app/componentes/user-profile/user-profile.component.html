@@ -8,7 +8,7 @@
             <form name="form" id="form" #updateForm="ngForm" (ngSubmit)="actualizarDatos()" ngNativeValidate>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div *ngIf="usuario.imagen && usuario.imagen != null">
-                        <img class="img-fluid" id="cargarImagen" src="{{url+'obtener-imagen-usuario/'+usuario.imagen}}"
+                        <img class="img-fluid rounded-circle" id="cargarImagen" src="{{url+'obtener-imagen-usuario/'+usuario.imagen}}"
                             alt="">
                     </div>
                     <div class="">

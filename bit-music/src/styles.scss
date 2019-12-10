@@ -36,10 +36,6 @@ body {
     transition: all .4s;
 }
 
-.btn-lg{
-    border-radius: 5px;
-}
-
 .btn-primary:hover {
     background-color: black;
 }
@@ -59,7 +55,7 @@ body {
 
 /* Cards */
 .card {
-    background-color: rgba(19, 19, 19, 0.705);
+    background-color: rgba(19, 19, 19, 0.75);
     border-radius: 10px;
     border: none;
 }
@@ -99,13 +95,15 @@ input[type=text]:active, input[type=password]:active, input[type=email]:active {
     border-bottom: 2px solid rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
     border: none;
+    box-shadow: none;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
     border: none;
     border-bottom: 2px solid rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
-    color: white
+    color: white;
+    box-shadow: none;
 }
 
 label{
