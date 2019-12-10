@@ -23,12 +23,17 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSession(){
+    return  localStorage.getItem("sesion")? JSON.parse( localStorage.getItem("sesion")): ''
+  }
+
   getUser(){
-    if(this._usuarioService.usuario){
-      this.name = this._usuarioService.usuario.nombre? this._usuarioService.usuario.nombre : '';
-      this.age = this._usuarioService.usuario.edad? this._usuarioService.usuario.edad : '';
-      this.email = this._usuarioService.usuario.correo? this._usuarioService.usuario.correo : '';
-      this.password = this._usuarioService.usuario.password? this._usuarioService.usuario.password : '';
+    let user = this.getSession();
+    if(user){
+      this.name = user.nombre? user.nombre : '';
+      this.age = user.edad? user.edad : '';
+      this.email = user.correo? user.correo : '';
+      this.password = user.password? user.password : '';
     }
   }
 

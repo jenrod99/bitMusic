@@ -1,4 +1,4 @@
-export class Usuario{
+export class Cancion{
     constructor(
         public _id: String,
         public titulo:String,

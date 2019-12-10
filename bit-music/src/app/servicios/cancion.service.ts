@@ -3,11 +3,12 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CancionService {
-  url = "http://localhost:3877/api/";
+  url = "http://localhost:3977/api/";
 
   constructor(
     private _http: HttpClient
@@ -15,9 +16,11 @@ export class CancionService {
 
   crearCancion(cancion){
     let params = JSON.stringify(cancion);
+    console.log(params);
+    
     let options = {
       headers: new HttpHeaders(
-        { 'Content-type':'aplication/json'})};
+        { 'Content-type':'application/json'})};
     return this._http.post(
       this.url + 'cancion',
       params,
@@ -28,7 +31,7 @@ export class CancionService {
   eliminarCancion(id){
     let options = {
       headers: new HttpHeaders(
-        { 'Content-type':'aplication/json'})};
+        { 'Content-type':'application/json'})};
     return this._http.delete(
       this.url + 'cancion/' + id,
       options      
@@ -39,8 +42,18 @@ export class CancionService {
     let formData = new FormData();
     formData.append('file', file);
     return this._http.post(
-      this.url + '/cargar-fichero-cancion/' + id,
+      this.url + 'cargar-fichero-cancion/' + id,
       formData      
+    ).pipe(map(res => res));
+  }
+
+  obtenerCanciones(){
+    let options = {
+      headers: new HttpHeaders(
+        { 'Content-type':'application/json'})};
+    return this._http.get(
+      this.url + 'canciones',
+      options      
     ).pipe(map(res => res));
   }
 

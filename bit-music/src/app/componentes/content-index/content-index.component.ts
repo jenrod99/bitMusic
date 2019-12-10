@@ -33,6 +33,12 @@ export class ContentIndexComponent implements OnInit {
         if (response.usuario) {
           this.registroCorrecto = 
           "El registro es correcto te puedes loguear con el email "+this.usuario.correo;
+          this.usuario.correo='';
+          this.usuario.edad=null;
+          this.usuario.imagen='';
+          this.usuario.nombre='';
+          this.usuario.password='';
+          this.usuario.role=''; 
         } else {
           this.registroCorrecto = 
           "no se ha realizado el registro del usuario, consulte con soporte ";

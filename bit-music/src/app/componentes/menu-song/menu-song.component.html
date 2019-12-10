@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 <div class="row text-white mt-3">
         <div class="col-12">
             <h2>Canciones</h2>
@@ -22,4 +22,30 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <div class="row text-white mt-3">
+        <div class="col-12">
+            <h2>Canciones</h2>
+            <div class="player-box" *ngIf="existenCanciones">
+                <ul *ngIf="existenCanciones">
+                    <li *ngFor="let cancion of canciones">
+                        <p>{{cancion.titulo + ' - ' + cancion.artista + ' - ' 
+                                            + cancion.genero + ' - ' + cancion.duracion}}
+                            <a data-toggle="modal" href="#modal" class="iconoCancion"
+                                (click)="agregarListaReproduccion(cancion)">
+                                <i class="fas fa-play"></i>
+                            </a>
+                            <a data-toggle="modal" href="#modal" *ngIf="usuario.role == 'ROLE_ADMIN'"
+                                class="iconoCancion ml-2" (click)="eliminarCancion(cancion)">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+
