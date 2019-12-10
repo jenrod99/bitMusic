@@ -5,10 +5,10 @@
             <h2>Actualizar mis datos</h2>
         </div>
         <div class="card-body">
-            <form name="form" id="form">
+            <form name="form" id="form" #updateForm="ngForm" (ngSubmit)="actualizarDatos()" ngNativeValidate>
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div *ngIf="usuario.imagen && usuario.imagen != null">
-                        <img class="img-fluid" id="cargarImagen" src="{{url+'obtenerImagenUsuario/'+usuario.imagen}}"
+                        <img class="img-fluid" id="cargarImagen" src="{{url+'obtener-imagen-usuario/'+usuario.imagen}}"
                             alt="">
                     </div>
                     <div class="">
