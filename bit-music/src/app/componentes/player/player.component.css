@@ -19,9 +19,11 @@ h5, p {
  }
 
  .img-song {
-     width: 200px;
+     max-width: 200px;
      height: 200px;
+     object-fit: cover;
  }
+
  @media only screen and (max-width: 320px){
      audio{
          width: 99%;
