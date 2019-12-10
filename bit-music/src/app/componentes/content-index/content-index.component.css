@@ -1,9 +1,14 @@
 .vida-musica{
     font-size: 25px;
+    font-family: 'Calistoga';
 }
 
 .vida-musica:hover{
     font-size: 30px;
+    transition: .4s;
 }
 
+::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
+    color: white;
+}
   
