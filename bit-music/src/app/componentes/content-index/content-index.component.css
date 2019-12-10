@@ -1,14 +1,22 @@
 .vida-musica{
     font-size: 25px;
+    font-family: 'Calistoga';
 }
 
 .vida-musica:hover{
     font-size: 30px;
+    transition: .4s;
 }
 .avisoRegistro{
-    color: rgb(243, 8, 8);
+    color:#155724;
+    background-color:#d4edda;
+    border-radius: 2px;
+    padding: .5em;
+    font-weight: 700;
     text-align: center;
     margin-top: 1em;
 }
 
-  
+::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder {
+    color: white;
+}

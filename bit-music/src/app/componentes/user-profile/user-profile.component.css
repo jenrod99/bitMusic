@@ -28,7 +28,10 @@
 
 img {
   border-radius: 50%;
-  width: 150px;
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  margin-bottom: 11px;
 }
 
 h2{

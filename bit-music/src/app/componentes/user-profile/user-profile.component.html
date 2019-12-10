@@ -5,42 +5,42 @@
             <h2>Actualizar mis datos</h2>
         </div>
         <div class="card-body">
-            <form name="form" id="form">
+            <form name="form" id="form" #updateForm="ngForm" (ngSubmit)="actualizarDatos()" ngNativeValidate>
                 <div class="d-flex flex-column justify-content-center align-items-center">
-                    <div class="">
-                        <!-- <img src="../../../assets/img/user-profile.png" alt="" *ngIf="!_usuarioService.usuario || _usuarioService.usuario.imagen==''" >
-                        <img src="{{'data:image/jpg;base64,' + _usuarioService.usuario.imagen}}" *ngIf="_usuarioService.usuario && _usuarioService.usuario.imagen!=''" > -->
-                        <img src="../../../assets/img/user-profile.png" alt="">
+                    <div *ngIf="usuario.imagen && usuario.imagen != null">
+                        <img class="img-fluid rounded-circle" id="cargarImagen" src="{{url+'obtener-imagen-usuario/'+usuario.imagen}}"
+                            alt="">
                     </div>
                     <div class="">
                         <label for="avatar" class="profileImg">Cargar imagen <i class="fas fa-camera"></i></label>
-                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" (change)="fileChangeEvent($event)">
+                        <!-- <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"><i class="fas fa-camera"></i> -->
                     </div>
                 </div>
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : name !=''}">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre"
-                    [(ngModel)]="name">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" #nombre="ngModel" name="nombre" [(ngModel)]="usuario.nombre" required>
                 </div>
 
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : age !=''}">Edad</label>
-                    <input type="text" class="form-control" id="edad" name="edad" required placeholder="Edad"
-                    [(ngModel)]="this.age">
+                    <input type="text" class="form-control" placeholder="Edad" #edad="ngModel" name="edad" [(ngModel)]="usuario.edad" required>
                 </div>
 
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : email !=''}">Correo</label>
-                    <input type="email" class="form-control" id="correo" name="correo" required placeholder="Correo"
-                    [(ngModel)]="this.email">
+                    <input type="email" class="form-control" placeholder="@" #correo="ngModel" name="correo" [(ngModel)]="usuario.correo" required>
                 </div>
 
                 <div class="form-group">
                     <label [ngClass]="{'text-view' : password !=''}">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" required placeholder="Contraseña"
-                    [(ngModel)]="this.password">
+                    <input type="password" class="form-control" placeholder="Contraseña" #password="ngModel" name="password" [(ngModel)]="usuario.password">
                 </div>
                 <input type="submit" class="btn btn-secondary" value="Actualizar Datos">
+                <!-- Validación -->
+                <div *ngIf="actualizacionCorrecta" class="alert alert-sucess">
+                    {{actualizacionCorrecta}}
+                </div>
             </form>
         </div>
     </div>

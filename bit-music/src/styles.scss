@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
  
 /* General */
 body {
-    background-image: url(./assets/img/8.gif);
+    background-image: url(./assets/img/8.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -34,10 +34,6 @@ body {
     border-radius: 0;
     background-color: white;
     transition: all .4s;
-}
-
-.btn-lg{
-    border-radius: 5px;
 }
 
 .btn-primary:hover {
@@ -59,7 +55,7 @@ body {
 
 /* Cards */
 .card {
-    background-color: rgba(1, 12, 17, 0.705);
+    background-color: rgba(19, 19, 19, 0.85);
     border-radius: 10px;
     border: none;
 }
@@ -87,7 +83,6 @@ body {
 input[type=text], input[type=password], input[type=email] {
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid black;
     background-color: rgba(1, 12, 17, 0);
     color: white;
 }
@@ -96,14 +91,19 @@ input[type=text], input[type=password], input[type=email] {
     text-align: right;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: white;
-    opacity: 1;
-  }
-
 input[type=text]:active, input[type=password]:active, input[type=email]:active {
-    color: rgb(226, 0, 49);
+    border-bottom: 2px solid rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
+    border: none;
+    box-shadow: none;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    border: none;
+    border-bottom: 2px solid rgb(226, 0, 49);
+    background-color: rgba(1, 12, 17, 0);
+    color: white;
+    box-shadow: none;
 }
 
 label{
@@ -114,14 +114,16 @@ label{
     color: white;
 }
 
-.form-control:focus{
+.form-control {
     border-color: transparent;
     box-shadow: none;
-    border-bottom: 2px solid  rgb(226, 0, 49);
     background-color: rgba(1, 12, 17, 0);
     color: white;
 }
 
+/* .form-control:active {
+    border-bottom: 2px solid rgb(226, 0, 49);
+} */
 
 /* Navbar */
 .navbar {
